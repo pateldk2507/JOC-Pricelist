@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jalaram Oil Center - Price Check</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.3/css/dataTables.dataTables.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="myNav">
+  <a class="navbar-brand" href="index.html">Jalaram Oil Center</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Price Check</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="updateprice.html">Update Price</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="stock.html">Update Stock</a>
+      </li>
+      <li class="nav-item ml-2">
+        <button id="themeToggle" class="btn btn-outline-dark">🌙 Mode</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Price Check</h1>
+  
+  <div class="form-group">
+    <label for="itemId" style="font-size: 20px;">Item Code</label>
+    <input type="text" id="itemId" class="form-control" placeholder="Enter Item Code">
+  </div>
+
+  <button class="btn btn-primary btn-block" onclick="getData()">Search</button>
+
+  <div id="loader" class="loader mt-3" style="display:none;"></div>
+
+  <h2 class="mt-4">Result</h2>
+  <div id="card-price" style="display:none;">
+    <table class="table table-striped" id="myTable">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Old Price</th>
+          <th>New Price</th>
+          <th>Qty</th>
+        </tr>
+      </thead>
+      <tbody id="priceTableBody"></tbody>
+    </table>
+  </div>
+
+  <h3 id="error" class="text-danger" style="display:none;">Error: Item Not Found!</h3>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://cdn.datatables.net/2.3.3/js/dataTables.min.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/price-check.js"></script>
+
+
+</body>
+</html>
